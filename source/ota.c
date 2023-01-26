@@ -71,7 +71,6 @@
 /* Include firmware version struct definition. */
 #include "ota_appversion32.h"
 
-
 /**
  * @brief Offset helper.
  */
@@ -1586,7 +1585,8 @@ static DocParseErr_t decodeAndStoreKey( const char * pValueInJson,
     /* pSig should point to pSignature in OtaFileContext_t, which is statically allocated. */
     assert( *pSig != NULL );
 
-    base64Status = base64Decode( ( *pSig )->data,
+    // Latch Systems, Inc - Redefinition
+    base64Status = ota_base64Decode( ( *pSig )->data,
                                  sizeof( ( *pSig )->data ),
                                  &actualLen,
                                  ( const uint8_t * ) pValueInJson,

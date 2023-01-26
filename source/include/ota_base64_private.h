@@ -105,7 +105,8 @@ typedef enum Base64Status
  *             - An error code defined in ota_base64_private.h if the
  *               encoded data or input parameters are invalid.
  */
-Base64Status_t base64Decode( uint8_t * pDest,
+// Latch Systems, Inc - Redefinition
+Base64Status_t ota_base64Decode( uint8_t * pDest,
                              const size_t destLen,
                              size_t * pResultLen,
                              const uint8_t * pEncodedData,
