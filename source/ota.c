@@ -71,6 +71,10 @@
 /* Include firmware version struct definition. */
 #include "ota_appversion32.h"
 
+// Latch Systems, Inc - Workaround for HardFault 
+//                      os.mem.free in 'ingestDataBlock'
+#pragma GCC optimize("O0")
+
 /**
  * @brief Offset helper.
  */
